@@ -1,0 +1,54 @@
+<h3>{{viewTitle}}</h3>
+
+<form action="/contracts" method="POST" autocomplete="off">
+<!--Utilização do input do tipo hidem, permiter passar o id vindo do banco-->
+<input type="hidden" name="_id" value="{{contracts._id}}">
+    <div class="form-group">
+        <label>Tipo de Contrato</label>
+        <input type="text" class="form-control" name="tipo" placeholder="Tipo de Contrato" value="{{contracts.tipo}}">
+        <div class="text-danger">
+            {{contracts.tipoError}}
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label>Ano</label>
+            <input type="text" class="form-control" name="ano" placeholder="Ano" value="{{contracts.ano}}">
+            <div class="text-danger">
+                {{contracts.anoError}}
+            </div>
+        </div>
+        <div class="form-group col-md-6">
+            <label>Data do Inicio do Contrato</label>
+            <input type="text" class="form-control" name="inicio" placeholder="Inicio do Contrato" value="{{contracts.inicio}}">
+            <div class="text-danger">
+                {{contracts.inicioError}}
+            </div>
+        </div>
+        <div class="form-group col-md-6">
+            <label>Data do Fim do Contrato</label>
+            <input type="text" class="form-control" name="fim" placeholder="Fim do Contrato" value="{{contracts.fim}}">
+            <div class="text-danger">
+                {{contracts.fimError}}
+            </div>
+        </div>
+        <div class="form-group col-md-6">
+            <label>Processo</label>
+            <input type="text" class="form-control" name="processo" placeholder="Processo" value="{{contracts.processo}}">
+            <div class="text-danger">
+                {{contracts.processoError}}
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <label>Contratante</label>
+        <input type="text" class="form-control" name="convenente" placeholder="Contratante" value="{{contracts.convenente}}">
+        <div class="text-danger">
+            {{contracts.convenenteError}}
+        </div>
+    </div>
+    <div class="form-group">
+        <button type="submit" class="btn btn-info"><i class="fa fa-database"></i>Salvar</button>
+        <a class="btn btn-secondary" href="/contracts/list"><i class="fa fa-list-alt"></i> Listar Todos</a>
+    </div>
+</form>

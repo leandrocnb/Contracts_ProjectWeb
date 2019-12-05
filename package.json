@@ -1,0 +1,26 @@
+{
+  "name": "contractsprojectweb",
+  "version": "1.0.0",
+  "description": "Projeto desenvolvido para a disciplinas de Programaçao Web",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/leandrocnb/Contracts_ProjectWeb.git"
+  },
+  "author": "LeandroCNB",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/leandrocnb/Contracts_ProjectWeb/issues"
+  },
+  "homepage": "https://github.com/leandrocnb/Contracts_ProjectWeb#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "express-handlebars": "^3.0.0",
+    "mongoose": "^5.7.13",
+    "nodemon": "^2.0.1"
+  }
+}
