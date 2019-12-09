@@ -12,7 +12,6 @@ $(function () {
             success: function (contracts) {
                 console.log(contracts);
                 let tbody = $('tbody');
-
                 tbody.html('');
                 contracts.forEach(contract => {
                     tbody.append(`

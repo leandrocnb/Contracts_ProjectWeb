@@ -23,7 +23,7 @@ const Contracts = mongoose.model('Contracts');
 const app = express();
 
 //Configurações
-app.set('port', process.env.PORT || 3000);
+app.set('port', process.env.PORT || 8000);
 
 //middlaware
 app.use(morgan('dev'));
@@ -78,7 +78,7 @@ app.put('/contracts/:id', (req, res) => {
         { new: true },
         (err, doc) => {
             if(!err) {
-                console.log('Atualizado com sucesso');
+                res.json('Atualizado com sucesso');
             }
             else {
                 console.log('Erro ao atualizar o contrato: ' + err);
@@ -91,7 +91,7 @@ app.delete('/contracts/:id', (req,res) => {
     //Executando função de Deleção
     Contracts.deleteOne({_id: req.params.id}, (err, doc) => {
         if (!err) {
-            console.log('Deletado com sucesso');
+            res.json('Deletado com sucesso');
         }
         else{
             console.log('Erro ao deletar contrato: ' + err);
