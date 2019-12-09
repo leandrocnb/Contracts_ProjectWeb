@@ -19,6 +19,7 @@ const mongoose = require('mongoose');
 //Impotando o modelo do schema
 const Contracts = mongoose.model('Contracts');
 
+
 //Criando um aplicação
 const app = express();
 

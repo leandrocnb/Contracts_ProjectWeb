@@ -37,7 +37,7 @@ $(function () {
                             </<td>
                             <td>
                                 <a class="editContratos"><i class="fa fa-pencil fa-lg" aria-hidden="true"></i></a>
-                                <a class="delContratos" onclick="return confirm('Deseja realmente deletar esse contrato?');"><i class="fa fa-trash fa-lg" aria-hidden="true"></i></a>
+                                <a class="delContratos"><i class="fa fa-trash fa-lg" aria-hidden="true"></i></a>
                             </td>
 
                         </tr>
@@ -71,6 +71,13 @@ $(function () {
             },
             success: function(response) {
                 $('#listContratos').click();
+                swal("Cadastrado!", "Novo contrato cadastrado com sucesso.", "success");
+                //$('#tipo').append('');
+                //$('#ano');
+                //$('#inicio');
+                //$('#fim');
+                //$('#convenente');
+                //$('#processo');
             }
         })
     })
@@ -100,6 +107,7 @@ $(function () {
             },
             success: function (response) {
                 $('#listContratos').click();
+                swal("Atualizado!", "Contrato atualizado com sucesso.", "success");
             }
         })
     });
@@ -108,14 +116,26 @@ $(function () {
     $('table').on('click', '.delContratos', function() {
         let row = $(this).closest('tr');
         let id = row.find('.id').text();
-
-        $.ajax({
-            url: '/contracts/' + id,
-            method: 'DELETE',
-            success: function (response) {
-                $('#listContratos').click();
+        swal({
+            title: "Deseja realmente deletar?",
+            text: "Após deletar um contrato não será possivel recuperar",
+            icon: "warning",
+            buttons: true,
+            dangerMode: true,
+          })
+          .then((willDelete) => {
+            if (willDelete) {
+                $.ajax({
+                    url: '/contracts/' + id,
+                    method: 'DELETE',
+                    success: function (response) {
+                        $('#listContratos').click();
+                        swal("Deletado!", "Contrato deletado com sucesso.", "success");
+                    }
+                })
             }
-        })
+          });
+       
     });
 
 });
