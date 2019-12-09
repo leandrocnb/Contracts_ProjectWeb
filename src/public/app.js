@@ -72,12 +72,12 @@ $(function () {
             success: function(response) {
                 $('#listContratos').click();
                 swal("Cadastrado!", "Novo contrato cadastrado com sucesso.", "success");
-                //$('#tipo').append('');
-                //$('#ano');
-                //$('#inicio');
-                //$('#fim');
-                //$('#convenente');
-                //$('#processo');
+                $('#tipo').val('');
+                $('#ano').val('');
+                $('#inicio').val('');
+                $('#fim').val('');
+                $('#convenente').val('');
+                $('#processo').val('');
             }
         })
     })
